@@ -1,0 +1,714 @@
+{
+ "methodOrder": [
+  "gt",
+  "psdf",
+  "atgs_of",
+  "neus2",
+  "dgmesh",
+  "dynamic-2dgs"
+ ],
+ "methodLabels": {
+  "gt": "GT",
+  "psdf": "Ours (p-SDF)",
+  "atgs_of": "AT-GS",
+  "neus2": "NeuS2",
+  "dgmesh": "DG-Mesh",
+  "dynamic-2dgs": "D-2DGS"
+ },
+ "pbrKinds": [
+  "kd",
+  "metallic",
+  "occ",
+  "roughness"
+ ],
+ "datasets": [
+  {
+   "id": "cmu-360",
+   "name": "CMU Panoptic",
+   "scenes": [
+    {
+     "id": "band1",
+     "name": "Band",
+     "views": [
+      {
+       "id": "view5",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/cmu-360/band1/view5/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/band1/view5/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/cmu-360/band1/view5/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/band1/view5/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/band1/view5/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/cmu-360/band1/view5/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/band1/view5/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/band1/view5/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/cmu-360/band1/view5/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/cmu-360/band1/view5/neus2_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/band1/view5/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/cmu-360/band1/view5/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/cmu-360/band1/view5/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/cmu-360/band1/view5/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/cmu-360/band1/view5/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/cmu-360/band1/view5/psdf_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/band1/view5/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/band1/view5/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "cello1",
+     "name": "Cello",
+     "views": [
+      {
+       "id": "view1",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/cmu-360/cello1/view1/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/cello1/view1/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/cmu-360/cello1/view1/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/cello1/view1/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/cello1/view1/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/cmu-360/cello1/view1/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/cello1/view1/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/cello1/view1/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/cmu-360/cello1/view1/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/cmu-360/cello1/view1/neus2_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/cello1/view1/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/cmu-360/cello1/view1/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/cmu-360/cello1/view1/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/cmu-360/cello1/view1/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/cmu-360/cello1/view1/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/cmu-360/cello1/view1/psdf_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/cello1/view1/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/cello1/view1/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "hanggling_b2",
+     "name": "Hanggling",
+     "views": [
+      {
+       "id": "view5",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/hanggling_b2/view5/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/hanggling_b2/view5/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/hanggling_b2/view5/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/hanggling_b2/view5/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/hanggling_b2/view5/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/neus2_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/hanggling_b2/view5/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/hanggling_b2/view5/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "ian3",
+     "name": "Ian",
+     "views": [
+      {
+       "id": "view4",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/cmu-360/ian3/view4/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/ian3/view4/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/cmu-360/ian3/view4/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/ian3/view4/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/ian3/view4/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/cmu-360/ian3/view4/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/ian3/view4/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/ian3/view4/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/cmu-360/ian3/view4/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/cmu-360/ian3/view4/neus2_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/ian3/view4/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/cmu-360/ian3/view4/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/cmu-360/ian3/view4/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/cmu-360/ian3/view4/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/cmu-360/ian3/view4/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/cmu-360/ian3/view4/psdf_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/ian3/view4/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/ian3/view4/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "pizza1",
+     "name": "Pizza",
+     "views": [
+      {
+       "id": "view5",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/cmu-360/pizza1/view5/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/pizza1/view5/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/cmu-360/pizza1/view5/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/pizza1/view5/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/pizza1/view5/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/cmu-360/pizza1/view5/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/pizza1/view5/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/pizza1/view5/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/cmu-360/pizza1/view5/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/cmu-360/pizza1/view5/neus2_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/pizza1/view5/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/cmu-360/pizza1/view5/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/cmu-360/pizza1/view5/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/cmu-360/pizza1/view5/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/cmu-360/pizza1/view5/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/cmu-360/pizza1/view5/psdf_pred_image.mp4",
+         "mesh": "static/gallery/cmu-360/pizza1/view5/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/cmu-360/pizza1/view5/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "diva-360",
+   "name": "DiVa-360",
+   "scenes": [
+    {
+     "id": "dog",
+     "name": "Dog",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/diva-360/dog/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/dog/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/diva-360/dog/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/dog/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/dog/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/diva-360/dog/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/dog/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/dog/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/diva-360/dog/view0/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/diva-360/dog/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/dog/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/diva-360/dog/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/diva-360/dog/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/diva-360/dog/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/diva-360/dog/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/diva-360/dog/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/dog/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/dog/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "k1_double_punch",
+     "name": "Punch",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/diva-360/k1_double_punch/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/k1_double_punch/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/diva-360/k1_double_punch/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/k1_double_punch/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/k1_double_punch/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/diva-360/k1_double_punch/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/k1_double_punch/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/k1_double_punch/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/diva-360/k1_double_punch/view0/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/diva-360/k1_double_punch/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/k1_double_punch/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/diva-360/k1_double_punch/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/diva-360/k1_double_punch/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/diva-360/k1_double_punch/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/diva-360/k1_double_punch/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/diva-360/k1_double_punch/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/k1_double_punch/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/k1_double_punch/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "penguin",
+     "name": "Penguin",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/diva-360/penguin/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/penguin/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/diva-360/penguin/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/penguin/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/penguin/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/diva-360/penguin/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/penguin/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/penguin/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/diva-360/penguin/view0/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/diva-360/penguin/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/penguin/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/diva-360/penguin/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/diva-360/penguin/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/diva-360/penguin/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/diva-360/penguin/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/diva-360/penguin/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/penguin/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/penguin/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "wolf",
+     "name": "Wolf",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/diva-360/wolf/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/wolf/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/diva-360/wolf/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/wolf/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/wolf/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/diva-360/wolf/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/wolf/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/wolf/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/diva-360/wolf/view0/gt_image.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/diva-360/wolf/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/wolf/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/diva-360/wolf/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/diva-360/wolf/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/diva-360/wolf/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/diva-360/wolf/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/diva-360/wolf/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/diva-360/wolf/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/diva-360/wolf/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "synmotion-360",
+   "name": "SynMotion-360",
+   "scenes": [
+    {
+     "id": "cat",
+     "name": "Cat",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/cat/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/cat/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/cat/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/cat/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/cat/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/cat/view0/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/cat/view0/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/cat/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/cat/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/cat/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/cat/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/cat/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/cat/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/cat/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/cat/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "deer",
+     "name": "Deer",
+     "views": [
+      {
+       "id": "view0",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/deer/view0/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/deer/view0/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/deer/view0/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/deer/view0/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/deer/view0/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/deer/view0/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/deer/view0/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/deer/view0/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/deer/view0/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/deer/view0/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/deer/view0/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/deer/view0/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/deer/view0/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/deer/view0/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/deer/view0/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "footballplayer",
+     "name": "Football Player",
+     "views": [
+      {
+       "id": "view2",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/footballplayer/view2/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/footballplayer/view2/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/footballplayer/view2/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/footballplayer/view2/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/footballplayer/view2/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/footballplayer/view2/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/footballplayer/view2/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/footballplayer/view2/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/footballplayer/view2/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/footballplayer/view2/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/footballplayer/view2/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/footballplayer/view2/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/footballplayer/view2/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/footballplayer/view2/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/footballplayer/view2/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "lego",
+     "name": "Lego",
+     "views": [
+      {
+       "id": "view1",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/lego/view1/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/lego/view1/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/lego/view1/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/lego/view1/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/lego/view1/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/lego/view1/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/lego/view1/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/lego/view1/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/lego/view1/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/lego/view1/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/lego/view1/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/lego/view1/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/lego/view1/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/lego/view1/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/lego/view1/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "rabbit",
+     "name": "Rabbit",
+     "views": [
+      {
+       "id": "view1",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/rabbit/view1/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/rabbit/view1/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/rabbit/view1/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/rabbit/view1/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/rabbit/view1/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/rabbit/view1/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/rabbit/view1/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/rabbit/view1/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/rabbit/view1/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/rabbit/view1/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/rabbit/view1/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/rabbit/view1/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/rabbit/view1/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/rabbit/view1/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/rabbit/view1/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "spidermanfight",
+     "name": "Spider Man",
+     "views": [
+      {
+       "id": "view5",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/spidermanfight/view5/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/spidermanfight/view5/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/spidermanfight/view5/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/spidermanfight/view5/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "toy",
+     "name": "Toy",
+     "views": [
+      {
+       "id": "view5",
+       "methods": {
+        "atgs_of": {
+         "image": "static/gallery/synmotion-360/toy/view5/atgs_of_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/atgs_of_pred_mesh.mp4"
+        },
+        "dgmesh": {
+         "image": "static/gallery/synmotion-360/toy/view5/dgmesh_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/dgmesh_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/toy/view5/dgmesh_pred_normal.mp4"
+        },
+        "dynamic-2dgs": {
+         "image": "static/gallery/synmotion-360/toy/view5/dynamic-2dgs_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/dynamic-2dgs_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/toy/view5/dynamic-2dgs_pred_normal.mp4"
+        },
+        "gt": {
+         "image": "static/gallery/synmotion-360/toy/view5/gt_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/gt_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/toy/view5/gt_normal.mp4"
+        },
+        "neus2": {
+         "image": "static/gallery/synmotion-360/toy/view5/neus2_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/neus2_pred_mesh.mp4"
+        },
+        "psdf": {
+         "pbr_kd": "static/gallery/synmotion-360/toy/view5/psdf_pbr_kd.mp4",
+         "pbr_metallic": "static/gallery/synmotion-360/toy/view5/psdf_pbr_metallic.mp4",
+         "pbr_occ": "static/gallery/synmotion-360/toy/view5/psdf_pbr_occ.mp4",
+         "pbr_roughness": "static/gallery/synmotion-360/toy/view5/psdf_pbr_roughness.mp4",
+         "image": "static/gallery/synmotion-360/toy/view5/psdf_pred_image.mp4",
+         "mesh": "static/gallery/synmotion-360/toy/view5/psdf_pred_mesh.mp4",
+         "normal": "static/gallery/synmotion-360/toy/view5/psdf_pred_normal.mp4"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

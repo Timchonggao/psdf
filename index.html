@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Parametric SDF for Dynamic Surface Reconstruction, ECCV 2026.">
+  <meta property="og:title" content="Parametric SDF for Dynamic Surface Reconstruction">
+  <meta property="og:description" content="A parametric signed distance function for high-fidelity dynamic surface reconstruction.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="static/images/fig1_qualitative_comparison.png">
+  <title>Parametric SDF for Dynamic Surface Reconstruction</title>
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/index.css?v=4">
+</head>
+<body id="top">
+  <!-- ===== nav ===== -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#top">p-SDF</a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav id="site-nav">
+        <a href="#overview">Overview</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#gallery">Comparison</a>
+        <a href="#decomposition">Decomposition</a>
+        <a href="#results">Results</a>
+        <a href="#bibtex">BibTeX</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== hero ===== -->
+  <header class="hero">
+    <span class="venue">ECCV 2026</span>
+    <h1>Parametric SDF for Dynamic Surface Reconstruction</h1>
+    <p class="authors">
+      <a href="#">Chong Gao</a><sup>1,&#42;</sup>,
+      <a href="#">Kai Ye</a><sup>2,&#42;</sup>,
+      <a href="#">Qiyu Dai</a><sup>2</sup>,
+      <a href="#">Yiming Shao</a><sup>3</sup>,
+      <a href="#">Qiong Zeng</a><sup>3</sup>,
+      <a href="#">Ding Liang</a><sup>4</sup>,
+      <a href="#">Yan-Pei Cao</a><sup>4</sup>,
+      <a href="#">Guanbin Li</a><sup>1,5,&dagger;</sup>,
+      <a href="#">Wenzheng Chen</a><sup>6,7,&dagger;</sup>
+    </p>
+    <p class="affiliation">
+      <sup>1</sup>Sun Yat-sen University&emsp;
+      <sup>2</sup>Peking University&emsp;
+      <sup>3</sup>Shandong University&emsp;
+      <sup>4</sup>VAST<br>
+      <sup>5</sup>Shenzhen Loop Area Institute&emsp;
+      <sup>6</sup>Wangxuan Institute of Computer Technology, Peking University&emsp;
+      <sup>7</sup>Beijing Academy of Artificial Intelligence
+    </p>
+    <p class="notes"><sup>&#42;</sup>Equal contribution&emsp;<sup>&dagger;</sup>Corresponding authors</p>
+    <div class="btn-row">
+      <span class="btn disabled"><span class="ico">&#128220;</span> Paper (soon)</span>
+      <span class="btn disabled"><span class="ico">&#128209;</span> Supplementary (soon)</span>
+      <span class="btn disabled"><span class="ico">&#128187;</span> Code (soon)</span>
+      <span class="btn disabled"><span class="ico">&#128190;</span> Data (soon)</span>
+    </div>
+  </header>
+
+  <!-- ===== overview / Fig.1 (teaser) ===== -->
+  <section class="block soft" id="overview">
+    <div class="inner">
+      <div style="text-align:center;margin-bottom:20px;">
+        <h2 class="section-title">Dynamic Surface Reconstruction</h2>
+        <p class="section-sub">A parametric time-varying SDF for high-fidelity dynamic surface reconstruction.</p>
+      </div>
+      <figure class="wide framed">
+        <video class="demo-video" controls playsinline preload="metadata" poster="static/images/demo_poster.png?v=2">
+          <source src="static/videos/demo.mp4?v=2" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== abstract ===== -->
+  <section class="block" id="abstract">
+    <div class="inner narrow">
+      <h2 class="section-title">Abstract</h2>
+      <p class="lead">
+        Reconstructing high-fidelity surfaces of dynamic scenes remains a critical challenge. While current
+        methods excel at novel view synthesis, they often struggle to recover accurate and stable geometry,
+        particularly under large non-rigid deformations. This results in noisy meshes that are unsuitable for
+        downstream simulation or editing.
+      </p>
+      <p class="lead">
+        In this work, we introduce a new paradigm for dynamic surface reconstruction based on a parametric
+        Signed Distance Function (<b>p-SDF</b>). Our key insight is to generalize static SDF fields&mdash;where
+        each spatial point stores a constant value&mdash;into time-dependent parametric curves where each curve
+        models a temporally evolving SDF trajectory. This parametric SDF representation provides a principled way
+        to capture complex temporal variations, naturally enforcing smoothness and continuity in shape dynamics.
+      </p>
+      <p class="lead">
+        At each timestamp, a static SDF field can be queried from p-SDF and converted into an explicit surface
+        mesh via differentiable iso-surfacing. By rendering these meshes with a physically based differentiable
+        renderer, we optimize the underlying parametric curves end-to-end against 2D image observations. Our
+        framework produces high-fidelity surfaces and inherently disentangles geometry, material, and lighting
+        from multi-view videos. It robustly reconstructs geometry under large-scale motions and resolves
+        appearance ambiguities caused by lighting and occlusions.
+      </p>
+      <p class="lead">
+        Experiments on both synthetic and real-world scenes demonstrate that our method achieves state-of-the-art
+        geometric accuracy.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== motivation ===== -->
+  <section class="block soft" id="motivation">
+    <div class="inner narrow">
+      <h2 class="section-title">Motivation: a continuous SDF trajectory</h2>
+      <p class="lead">
+        As a dynamic scene evolves, the signed distance value at a fixed spatial location does not jump
+        arbitrarily &mdash; it follows a smooth, continuous temporal trajectory. Per-frame or incremental
+        methods ignore this structure and reconstruct each timestamp independently, accumulating error and
+        producing temporally unstable, noisy meshes.
+      </p>
+      <p class="lead">
+        p-SDF models this temporal evolution directly with a compact parametric curve per spatial location.
+        This makes shape dynamics smooth and continuous by construction, enables querying a consistent surface
+        at any timestamp, and jointly disentangles geometry, material, and lighting for downstream editing such
+        as relighting.
+      </p>
+    </div>
+    <div class="inner">
+      <figure class="wide framed" style="margin-top:24px;">
+        <img src="static/images/fig2_continuous_sdf_trajectory.png" alt="Continuous SDF trajectory: the SDF value at a fixed location follows a continuous temporal curve fitted with compact basis functions.">
+        <figcaption><b>Fig. 2. Continuous SDF trajectory.</b> The SDF value at a fixed spatial coordinate follows a continuous temporal trajectory, which p-SDF represents with compact basis functions.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== interactive comparison ===== -->
+  <section class="block soft" id="gallery">
+    <div class="inner">
+      <h2 class="section-title">Interactive comparison</h2>
+      <p class="section-sub">Pick any dataset and scene: compare all methods side by side, or drag to compare any two. Hover to play.</p>
+
+      <div class="gctrl gctrl-center">
+        <label for="cmp-dataset">Dataset</label><select id="cmp-dataset"></select>
+        <label for="cmp-scene">Scene</label><select id="cmp-scene"></select>
+        <label for="cmp-kind">Type</label><select id="cmp-kind"><option value="mesh">Mesh</option><option value="image">RGB</option></select>
+      </div>
+      <div id="cmp-grid" class="cmp-grid"></div>
+
+      <div class="gctrl gctrl-center" style="margin-top:24px;">
+        <label for="cmp-a">Compare</label><select id="cmp-a"></select>
+        <span class="gvs">vs</span>
+        <select id="cmp-b"></select>
+      </div>
+      <div id="cmp-slider-host"></div>
+
+      <p class="gfallback" id="gallery-fallback" hidden>Gallery data could not be loaded. Serve this page over HTTP (e.g. <code>python3 -m http.server</code>) so <code>gallery.json</code> can be fetched.</p>
+    </div>
+  </section>
+
+  <!-- ===== material decomposition ===== -->
+  <section class="block" id="decomposition">
+    <div class="inner">
+      <h2 class="section-title">Material Decomposition &amp; Relighting</h2>
+      <p class="section-sub">p-SDF jointly recovers geometry, material, and lighting, enabling PBR decomposition and relighting. Below are p-SDF outputs for the selected scene. Hover a tile to play.</p>
+      <div class="gctrl gctrl-center">
+        <label for="pbr-dataset">Dataset</label><select id="pbr-dataset"></select>
+        <label for="pbr-scene">Scene</label><select id="pbr-scene"></select>
+      </div>
+      <div id="pbr-grid" class="cmp-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== results ===== -->
+  <section class="block" id="results">
+    <div class="inner">
+      <h2 class="section-title">Results</h2>
+      <p class="section-sub">State-of-the-art geometric accuracy across three datasets, with competitive-to-best rendering quality.</p>
+      <div class="metrics">
+        <div class="metric"><p class="name">SynMotion-360</p><strong>1.157</strong><span>CD&darr; &middot; best geometry (2nd: 1.203)</span></div>
+        <div class="metric"><p class="name">CMU Panoptic</p><strong>0.026</strong><span>CD&darr; &middot; &#8776;40&times; below best baseline (1.041)</span></div>
+        <div class="metric"><p class="name">DiVa-360</p><strong>27.58</strong><span>PSNR&uarr; &middot; best on all rendering metrics</span></div>
+      </div>
+
+      <p class="table-title">Geometry quality (mesh reconstruction)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="4">SynMotion-360</th>
+              <th colspan="4">CMU Panoptic Studio</th>
+              <th colspan="2">DiVa-360</th>
+            </tr>
+            <tr>
+              <th>CD&darr;</th><th>F1&uarr;</th><th>ECD&darr;</th><th>EF1&uarr;</th>
+              <th>CD&darr;</th><th>F1&uarr;</th><th>AR&darr;</th><th>MA&darr;</th>
+              <th>AR&darr;</th><th>MA&darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dynamic-2DGS</td><td>2.104</td><td>0.754</td><td>3.802</td><td>0.494</td><td>2.000</td><td>0.762</td><td>22.656</td><td>12.435</td><td>23.156</td><td>12.830</td></tr>
+            <tr><td>DG-Mesh</td><td>2.957</td><td>0.661</td><td>4.740</td><td>0.438</td><td class="u">1.041</td><td class="u">0.788</td><td>22.508</td><td>12.894</td><td>22.829</td><td>13.207</td></tr>
+            <tr><td>NeuS2</td><td class="u">1.203</td><td class="b">0.908</td><td class="u">3.220</td><td class="u">0.593</td><td>7.654</td><td>0.729</td><td>21.631</td><td>12.563</td><td>22.530</td><td>12.976</td></tr>
+            <tr><td>AT-GS</td><td>1.602</td><td>0.882</td><td>3.227</td><td>0.566</td><td>6.525</td><td>0.687</td><td class="u">19.359</td><td class="u">11.353</td><td class="u">19.234</td><td class="u">11.206</td></tr>
+            <tr class="ours"><td>Ours (p-SDF)</td><td class="b">1.157</td><td class="u">0.893</td><td class="b">3.170</td><td class="b">0.596</td><td class="b">0.026</td><td class="b">0.896</td><td class="b">4.983</td><td class="b">0.678</td><td class="b">3.126</td><td class="b">0.396</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-legend"><b>Bold</b> = best, <u>underline</u> = second best. CD / ECD / AR / MA &mdash; lower is better; F1 / EF1 &mdash; higher is better.</p>
+      <p class="tbl-legend">p-SDF achieves state-of-the-art geometric accuracy across all three datasets, with especially large margins on CMU Panoptic (CD 0.026 vs 1.041) and DiVa-360 mesh quality (AR 3.13 vs 19.23).</p>
+
+      <p class="table-title">Rendering quality (novel view synthesis)</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="3">SynMotion-360</th>
+              <th colspan="3">DiVa-360</th>
+            </tr>
+            <tr>
+              <th>PSNR&uarr;</th><th>SSIM&uarr;</th><th>LPIPS&darr;</th>
+              <th>PSNR&uarr;</th><th>SSIM&uarr;</th><th>LPIPS&darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dynamic-2DGS</td><td>29.489</td><td>0.959</td><td>0.062</td><td>17.513</td><td>0.910</td><td>0.187</td></tr>
+            <tr><td>DG-Mesh</td><td>25.719</td><td>0.936</td><td>0.081</td><td>17.734</td><td>0.919</td><td>0.183</td></tr>
+            <tr><td>NeuS2</td><td>30.070</td><td>0.967</td><td class="u">0.030</td><td>26.087</td><td>0.950</td><td class="u">0.056</td></tr>
+            <tr><td>AT-GS</td><td class="b">32.671</td><td class="b">0.977</td><td>0.045</td><td class="u">27.418</td><td class="u">0.956</td><td>0.067</td></tr>
+            <tr class="ours"><td>Ours (p-SDF)</td><td class="u">32.153</td><td class="u">0.974</td><td class="b">0.028</td><td class="b">27.584</td><td class="b">0.957</td><td class="b">0.049</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-legend"><b>Bold</b> = best, <u>underline</u> = second best. PSNR / SSIM &mdash; higher is better; LPIPS &mdash; lower is better.</p>
+      <p class="tbl-legend">p-SDF is best on the real-world DiVa-360 across all rendering metrics, and best on LPIPS for SynMotion-360 while remaining competitive on PSNR / SSIM.</p>
+    </div>
+  </section>
+
+  <!-- ===== bibtex ===== -->
+  <section class="block" id="bibtex">
+    <div class="inner narrow">
+      <h2 class="section-title">BibTeX</h2>
+      <div class="copy-row"><button class="btn secondary" type="button" data-copy-target="#bib">Copy BibTeX</button></div>
+      <pre class="bibtex" id="bib">@inproceedings{gao2026psdf,
+  title     = {Parametric SDF for Dynamic Surface Reconstruction},
+  author    = {Gao, Chong and Ye, Kai and Dai, Qiyu and Shao, Yiming and Zeng, Qiong and Liang, Ding and Cao, Yan-Pei and Li, Guanbin and Chen, Wenzheng},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</pre>
+    </div>
+  </section>
+
+  <footer class="site">
+    <p>Parametric SDF for Dynamic Surface Reconstruction &middot; ECCV 2026 &middot; <a href="#top">Back to top</a></p>
+  </footer>
+
+  <!-- lightbox -->
+  <div id="zoom" aria-hidden="true">
+    <span class="zoom-close">&times;</span>
+    <div class="zoom-body"></div>
+  </div>
+
+  <script src="static/js/index.js?v=6"></script>
+</body>
+</html>
